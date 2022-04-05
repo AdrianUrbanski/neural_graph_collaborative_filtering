@@ -25,12 +25,23 @@ If you want to use our codes and datasets in your research, please cite:
   year      = {2019},
 }
 ```
-## Environment Requirement
-The code has been tested running under Python 3.6.5. The required packages are as follows:
-* tensorflow == 1.8.0
-* numpy == 1.14.3
-* scipy == 1.1.0
-* sklearn == 0.19.1
+## Environment Requirements for GPU training (For the purpose of the Recommender System Project)
+The code has been tested running under Python 3.7.13 using an NVIDIA GeForce RTX 3080. The required packages (incuded in the requirements_gpu.txt file) are as follows:
+* tensorflow-gpu==1.14.0
+* numpy==1.16.4
+* scipy==1.5.0
+* scikit-learn==0.23.2
+
+In order to create the proper conda environment (e.g. called `NGCF_GPU`):
+
+```
+conda create --name NGCF_GPU --file requirements_gpu.txt
+```
+Activate the newly created environment:
+```
+conda activate NGCF_GPU
+```
+In case no CUDA GPUs are available, the above environment also allows for CPU training.
 
 ## Example to Run the Codes
 The instruction of commands has been clearly stated in the codes (see the parser function in NGCF/utility/parser.py).
